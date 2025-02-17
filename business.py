@@ -1,6 +1,6 @@
 #%% LIBRARY
 import numpy as np
-from itertools import product
+import itertools
 
 #%% INPUT WITH RIGHT FORMAT
 # So far, accept up to 3 variables
@@ -32,14 +32,16 @@ for i in range(len(var_list)):
     # Place value in the value list dictionary
     value_list[var_list[i]] = var_range
     
-# HOW TO GET ALL COMBINATION FROM A DICTIONARY????
+# Get all combination from the value ranges
+combinations = list(itertools.product(*value_list.values()))
+# print(combinations)  # Test the result
 
+#%% GET NEW PROBLEMS WITH GENERATED VALUES
 
-#%% PREVIOUS VERSION
-
-#%% CALCULATE VALUES
-# function to display 1 case
-def generate_output():
+for combination in combinations:
+    for i in range(len(var_list)):
+        globals()[var_list[i]] = combination[i] 
+    
     word_list_temp = word_list.copy()
     for i in range(len(word_list_temp)):
         try:
@@ -50,15 +52,7 @@ def generate_output():
     output_text = " ".join(word_list_temp)
     print(output_text)
 
-# print all cases
-for globals()[var_list[0]] in list_1:
-    if len(list_2) > 0:
-        for globals()[var_list[1]] in list_2:
-            if len(list_3) > 0:
-                for globals()[var_list[2]] in list_3:
-                    generate_output()
-            else:
-                generate_output()
-    else:
-        generate_output()
+    
+
+
         
