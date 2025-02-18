@@ -1,6 +1,9 @@
 #%% LIBRARY
 import numpy as np
 import itertools
+from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
 #%% INPUT WITH RIGHT FORMAT
 # So far, accept up to 3 variables
@@ -25,7 +28,7 @@ for i in range(len(var_list)):
     # Generate value from the range info
     var_range = np.arange(
         float(var_range_input[0]), 
-        float(var_range_input[1]), 
+        float(var_range_input[1])+1, 
         float(var_range_input[2])
         )
     
@@ -37,6 +40,8 @@ combinations = list(itertools.product(*value_list.values()))
 # print(combinations)  # Test the result
 
 #%% GET NEW PROBLEMS WITH GENERATED VALUES
+
+result = []
 
 for combination in combinations:
     for i in range(len(var_list)):
@@ -51,8 +56,22 @@ for combination in combinations:
             pass
     output_text = " ".join(word_list_temp)
     print(output_text)
+    result.append(output_text)
 
-    
+#%% USE AI TO GENERATE NEW CONTEXT FOR EACH PROBLEM
 
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 
+client = OpenAI(api_key=api_key)
+
+response = client.chat.completions.create(
+    model='gpt-4o-mini',
+    messages = [
+            {"role": "system", "content": "You are a math tutor."},
+            {"role": "user", "content": "Give me a tip to learn math"}
+        ]
+    )
+
+response.choices[0].message.content
         
