@@ -197,6 +197,8 @@ if input_text:
             st.write(response.choices[0].message.content)
         with tab2:
             st.code(response.choices[0].message.content)
-        
-        
-
+            
+        if option_api == "API mặc định":
+            st.markdown("""
+                        **Thầy/cô đã đạt giới hạn 400 từ cho câu trả lời!**
+                        """)
