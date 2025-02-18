@@ -41,7 +41,7 @@ combinations = list(itertools.product(*value_list.values()))
 
 #%% GET NEW PROBLEMS WITH GENERATED VALUES
 
-result = []
+result = " "
 
 for combination in combinations:
     for i in range(len(var_list)):
@@ -56,9 +56,13 @@ for combination in combinations:
             pass
     output_text = " ".join(word_list_temp)
     print(output_text)
-    result.append(output_text)
+    result += "\n" + output_text
 
 #%% USE AI TO GENERATE NEW CONTEXT FOR EACH PROBLEM
+
+user_message = "Tạo đề bài mới từ đề bài sau đây, sử dụng đa dạng phong phú \
+    các loại bối cảnh nhưng phải giữ nguyên số liệu trong bài tập. \
+        " + result
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
@@ -68,10 +72,18 @@ client = OpenAI(api_key=api_key)
 response = client.chat.completions.create(
     model='gpt-4o-mini',
     messages = [
-            {"role": "system", "content": "You are a math tutor."},
-            {"role": "user", "content": "Give me a tip to learn math"}
-        ]
+            {"role": "system", 
+             "content": "Bạn là giáo viên dạy toán ở Việt Nam, kiến thức của bạn \
+             là từ chương trình giáo dục phổ thông tại Việt Nam, sử dụng ngôn từ \
+                 thân thiện, khoa học và phù hợp văn hoá Việt Nam. Công thức \
+                     Toán học cần để ở giữa $ $"
+             },
+            {"role": "user", 
+             "content": user_message
+             }
+        ],
+    max_tokens = 300
     )
 
-response.choices[0].message.content
+print(response.choices[0].message.content)
         
