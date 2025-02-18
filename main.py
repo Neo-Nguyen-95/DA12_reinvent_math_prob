@@ -149,7 +149,20 @@ if input_text:
     
     if st.button("Tạo đề mới từ bộ tham số đã nhập"):
         
-        time.sleep(wait_time)
+        if option_api == "API mặc định":
+            st.columns(6)[0].write("Loading")
+            time.sleep(wait_time/5)
+            st.columns(6)[1].write(".")
+            time.sleep(wait_time/5)
+            st.columns(6)[2].write(".")
+            time.sleep(wait_time/5)
+            st.columns(6)[3].write(".")
+            time.sleep(wait_time/5)
+            st.columns(6)[4].write(".")
+            time.sleep(wait_time/5)
+            st.columns(6)[5].write(".")
+            time.sleep(wait_time/5)
+        
         
         user_message = "Tạo đề bài mới từ đề bài sau đây, sử dụng đa dạng phong phú \
             các loại bối cảnh nhưng phải giữ nguyên số liệu trong bài tập. \
