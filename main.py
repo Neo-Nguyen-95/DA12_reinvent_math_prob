@@ -48,7 +48,7 @@ Trước khi tạo đề tương tự, thầy/cô lưu ý:
 with st.expander("Click để xem đề mẫu"):
     st.markdown("""---""")
     st.write("**Đề khi input vào phần mềm:**")
-    st.text("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
+    st.markdown("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
 thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
 Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
 A. _1 / 2 * g * (t ** 2)_ 
