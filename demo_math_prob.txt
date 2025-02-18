@@ -6,7 +6,7 @@ A. _round(1 / 2 * g * (t ** 2), 1)_
 B. _round(1 / 2 * g * t, 1)_
 C. _round(g * (t ** 2), 1)_
 D. _round(2 * g * (t ** 2), 1)_
-Gợi ý công thức: $h = \\frac{1}{2} a t^2$
+Gợi ý công thức: $h = \frac{1}{2} a t^2$
 Đáp án: _round(1 / 2 * g * (t ** 2), 1)_
 
 
