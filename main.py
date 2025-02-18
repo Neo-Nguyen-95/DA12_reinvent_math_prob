@@ -3,8 +3,6 @@ import streamlit as st
 import numpy as np
 import itertools
 from openai import OpenAI
-import os
-from dotenv import load_dotenv
 import time
  
 #%% INTRO
