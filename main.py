@@ -150,17 +150,18 @@ if input_text:
     if st.button("Tạo đề mới từ bộ tham số đã nhập"):
         
         if option_api == "API mặc định":
-            st.columns(6)[0].write("Loading")
+            col1, col2, col3, col4, col5, col6 = st.columns(6)
+            col1.write("Loading")
             time.sleep(wait_time/5)
-            st.columns(6)[1].write(".")
+            col2.write(".")
             time.sleep(wait_time/5)
-            st.columns(6)[2].write(".")
+            col3.write(".")
             time.sleep(wait_time/5)
-            st.columns(6)[3].write(".")
+            col4.write(".")
             time.sleep(wait_time/5)
-            st.columns(6)[4].write(".")
+            col5.write(".")
             time.sleep(wait_time/5)
-            st.columns(6)[5].write(".")
+            col6.write(".")
             time.sleep(wait_time/5)
         
         
