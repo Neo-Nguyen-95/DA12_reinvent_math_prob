@@ -146,6 +146,9 @@ if input_text:
         result += "\n" + output_text
         
     # %% USE AI TO GENERATE NEW CONTEXT FOR EACH PROBLEM
+    st.markdown("""
+                ## Bước 2: Tạo bài tập tương tự
+                """)
     
     if st.button("Tạo đề mới từ bộ tham số đã nhập"):
         
