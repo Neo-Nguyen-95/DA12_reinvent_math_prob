@@ -89,7 +89,7 @@ with st.expander("Click để xem đề mẫu - Phức tạp"):
     
 st.markdown("""
             ## Bước 1: Nhập đề nguyên lí
-            """)
+            """) 
             
 input_text = st.text_area("Nhập đề của thầy/cô tại đây:").strip()
 #%% PROCESS
