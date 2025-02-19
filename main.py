@@ -25,7 +25,7 @@ if option_api == 'API cá nhân':
     wait_time = 0
 else:
     api_key = st.secrets["api"]["key"]
-    max_token_in = 500
+    max_token_in = 1000
     max_token_out = 500
     st.sidebar.write(f"Số lượng từ tối đa cho câu hỏi: {max_token_in}")
     st.sidebar.write(f"Số lượng từ tối đa cho câu trả lời: {max_token_out}")
