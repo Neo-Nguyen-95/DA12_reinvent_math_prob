@@ -1,4 +1,12 @@
-Test 1:
+Test Easy:
+Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:
+A. _a+b_ cuốn sách
+B. _a*b_cuốn sách
+C. _a_ cuốn sách
+D. _b_ cuốn sách
+
+
+Test Med: Test value = 2 - 10
 Một người thả rơi một hòn bi từ trên cao xuống đất và đo được thời gian rơi 
 là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
 Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là:
@@ -10,10 +18,10 @@ Gợi ý công thức: $h = \frac{1}{2} a t^2$
 Đáp án: _round(1 / 2 * g * (t ** 2), 1)_
 
 
-Test 2:
+Test Hard: Test value = 1.5 - 3 - 18
 Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
-vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_\ cm. Khi đó, khu vườn 
-mới của bác có diện tích bằng _b_\ cm^2. Bác sử dụng dây thép gai để chắn xung 
+vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ cm. Khi đó, khu vườn 
+mới của bác có diện tích bằng _b_ cm^2. Bác sử dụng dây thép gai để chắn xung 
 quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 3 m dây thép gai. 
 Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
 

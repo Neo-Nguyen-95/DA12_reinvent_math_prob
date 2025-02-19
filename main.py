@@ -20,12 +20,15 @@ if option_api == 'API cá nhân':
         "Nhập API KEY của AI của thầy/cô",
         type="password"
         )
-    max_token = None
+    max_token_out = None
+    max_token_in = None
     wait_time = 0
 else:
     api_key = st.secrets["api"]["key"]
-    max_token = 400
-    st.sidebar.write(f"Số lượng từ tối đa cho câu trả lời: {max_token}")
+    max_token_in = 500
+    max_token_out = 500
+    st.sidebar.write(f"Số lượng từ tối đa cho câu hỏi: {max_token_in}")
+    st.sidebar.write(f"Số lượng từ tối đa cho câu trả lời: {max_token_out}")
     wait_time = 5
     st.sidebar.write(f"Thời gian chờ kết quả là {wait_time}s")
 
@@ -44,10 +47,20 @@ Trước khi tạo đề tương tự, thầy/cô lưu ý:
 
 - Số mũ cấp số nhân không sử dụng ^ mà sử dụng kí hiệu \\*\\*. *Ví dụ: a mũ x sẽ viết là a \\*\\* x*
             """)
+
+with st.expander("Click để xem đề mẫu - Đơn giản"):
+    st.text("""Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:
             
-with st.expander("Click để xem đề mẫu"):
-    st.markdown("""---""")
-    st.write("**Đề khi input vào phần mềm:**")
+    A. _a+b_ cuốn sách
+    
+    B. _a*b_cuốn sách
+    
+    C. _a_ cuốn sách
+    
+    D. _b_ cuốn sách"""
+    )
+
+with st.expander("Click để xem đề mẫu - Trung bình"):
     st.text("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
 thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
 Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
@@ -58,23 +71,27 @@ D. _2 * g * (t ** 2)_
 Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
 Đáp án: _1 / 2 * g * (t ** 2)_"""
     )
+
         
-    st.markdown("""---""")    
-    st.write("**Đề khi hiển thị với học sinh trên ứng dụng LMS:**")
-    st.markdown("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được thời gian rơi \nlà  2.0  s. Bỏ qua sức cản không khí. Lấy g =  9.0  $m/s^2$. \n Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là:\n
-A.  18.0 \n
-B.  9.0 \n
-C.  36.0 \n
-D.  72.0 \n
-Gợi ý công thức: $h = \\frac{1}{2} a t^2$ \n
-Đáp án:  18.0"""
-                )
+with st.expander("Click để xem đề mẫu - Phức tạp"):
+    st.text("""
+        Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
+        vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ cm. Khi đó, khu vườn 
+        mới của bác có diện tích bằng _b_ cm^2. Bác sử dụng dây thép gai để chắn xung 
+        quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 3 m dây thép gai. 
+        Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
+    
+        Đáp án:
+        Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
+        Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
+    """
+    )
     
 st.markdown("""
             ## Bước 1: Nhập đề nguyên lí
             """)
             
-input_text = st.text_area("Nhập đề của thầy/cô tại đây:")
+input_text = st.text_area("Nhập đề của thầy/cô tại đây:").strip()
 #%% PROCESS
 
 if input_text:
@@ -84,11 +101,17 @@ if input_text:
     word_list = input_text.split("_")
 
     # detect principal variable
-    var_list = [word for word in word_list if len(word) == 1]
+    var_list = [word for word in list(set(word_list)) if len(word) == 1]
     
     value_list = dict()
 
     st.write("Nhập khoảng giá trị cho từng biến theo hướng dẫn.")
+    nature_number = st.checkbox(label="Sử dụng số nguyên")
+    if nature_number:
+        default_value = 0
+    else:
+        default_value = 0.0
+    
    
     min_val = dict()
     max_val = dict()
@@ -102,17 +125,17 @@ if input_text:
         min_val[i] = col2.number_input(
             "Giá trị nhỏ nhất", 
             key = var_list[i] + "min",
-            value=0
+            value=default_value
             )
         max_val[i] = col3.number_input(
             "Giá trị lớn nhất", 
             key = var_list[i] + "max",
-            value=1
+            value=default_value+1
             )
         step_val[i] = col4.number_input(
             "Khoảng cách",
             key = var_list[i] + "step",
-            value=1
+            value=default_value+1
             )
 
         # Generate value from the range info
@@ -138,12 +161,28 @@ if input_text:
         for i in range(len(word_list_temp)):
             try:
                 computation = eval(word_list_temp[i])
+                if nature_number:
+                    computation = int(computation)
+                else:
+                    computation = str(computation).replace('.', ',')
+                
                 word_list_temp[i] = str(computation)  
             except:
                 pass
         output_text = " ".join(word_list_temp)
         print(output_text)
         result += "\n" + output_text
+    
+
+    type_message = 'Nếu câu hỏi có dạng multiple-choice/trắc nghiệm \
+            một lựa chọn. Các phương án trong câu hỏi \
+            cần sắp xếp theo thứ tự tăng dần. '
+    
+    
+    guide_message = "Tạo đề bài mới từ đề bài sau đây, sử dụng đa dạng phong phú \
+        các loại bối cảnh nhưng phải giữ nguyên số liệu trong bài tập. \
+        Ngoài đề bài và đáp án, bổ sung thêm gợi ý cách làm nếu học sinh \
+        làm sai. Giữ nguyên dạng câu hỏi. Không sáng tạo thông tin không được cung cấp."
         
     # %% USE AI TO GENERATE NEW CONTEXT FOR EACH PROBLEM
     st.markdown("""
@@ -166,12 +205,7 @@ if input_text:
             time.sleep(wait_time/5)
             col6.write("...")
             time.sleep(wait_time/5)
-        
-        
-        user_message = "Tạo đề bài mới từ đề bài sau đây, sử dụng đa dạng phong phú \
-            các loại bối cảnh nhưng phải giữ nguyên số liệu trong bài tập. \
-                " + result
-    
+
     
         client = OpenAI(api_key=api_key)
     
@@ -180,15 +214,15 @@ if input_text:
             messages = [
                     {"role": "system", 
                      "content": "Bạn là giáo viên dạy toán ở Việt Nam, kiến thức của bạn \
-                     là từ chương trình giáo dục phổ thông tại Việt Nam, sử dụng ngôn từ \
-                         thân thiện, khoa học và phù hợp văn hoá Việt Nam. Công thức \
-                             Toán học cần để ở giữa $ $"
+                    là từ chương trình giáo dục phổ thông tại Việt Nam, sử dụng ngôn từ \
+                    thân thiện, khoa học và phù hợp văn hoá Việt Nam. Công thức \
+                    Toán học cần để ở giữa $ $. " + type_message + guide_message
                      },
                     {"role": "user", 
-                     "content": user_message
+                     "content": result[:max_token_in]
                      }
                 ],
-            max_tokens = max_token
+            max_tokens = max_token_out
             )
             
         tab1, tab2 = st.tabs(["Văn bản đã xử lí", "Kí tự gốc"])
