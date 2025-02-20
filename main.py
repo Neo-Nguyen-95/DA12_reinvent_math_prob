@@ -26,7 +26,7 @@ if option_api == 'OPENAI API cá nhân':
 else:
     api_key = st.secrets["api"]["key"]
     max_token_in = 1000
-    max_token_out = 500
+    max_token_out = 1000
     st.sidebar.write(f"Số lượng từ tối đa cho câu hỏi: {max_token_in}")
     st.sidebar.write(f"Số lượng từ tối đa cho câu trả lời: {max_token_out}")
     wait_time = 5
@@ -108,8 +108,8 @@ khu vườn mới của bác có diện tích bằng _b_ m^2. Bác sử dụng d
 Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
     
 Đáp án:
-Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
-Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
+Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+2*a)*2*3_
+Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+2*)*2*3_
     """
     )
     
@@ -259,6 +259,6 @@ if input_text:
             st.code(response.choices[0].message.content)
             
         if option_api == "OPENAI API mặc định":
-            st.markdown("""
-                        **Thầy/cô đã đạt giới hạn 400 từ cho câu trả lời!**
+            st.markdown(f"""
+                        **Thầy/cô đã đạt giới hạn {max_token_out} từ cho câu trả lời!**
                         """)
