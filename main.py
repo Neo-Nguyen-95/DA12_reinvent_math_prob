@@ -32,7 +32,7 @@ else:
     wait_time = 5
     st.sidebar.write(f"Thời gian chờ kết quả là {wait_time}s")
     
-st.sidebar.makrdown("""
+st.sidebar.markdown("""
 ---
 Thầy/cô có thể trả phí và sử dụng OPENAI API tại 
 [trang chủ của OPENAI](https://platform.openai.com/).
