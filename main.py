@@ -50,7 +50,8 @@ Trước khi tạo đề tương tự, thầy/cô lưu ý:
 
 with st.expander("Click để xem đề mẫu - Đơn giản"):
     st.code("""
-Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:   
+Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. 
+Vậy, tổng 2 bạn có:   
     A. _a+b_ cuốn sách
     B. _a*b_cuốn sách
     C. _a_ cuốn sách
@@ -73,10 +74,11 @@ Gợi ý công thức: $h = \\frac{1}{2} a t^2$
         
 with st.expander("Click để xem đề mẫu - Phức tạp"):
     st.code("""
-Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
-vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m. Khi đó, khu vườn 
-mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai để chắn xung 
-quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 3 m dây thép gai. 
+Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng 
+khu vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m. Khi đó, 
+khu vườn mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai 
+để chắn xung quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 
+3 m dây thép gai. 
 Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
     
 Đáp án:
