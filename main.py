@@ -11,13 +11,13 @@ st.title("MATH PROBLEM GENERATOR (POWERED BY AI BUDDY)")
 #%% INPUT
 option_api = st.sidebar.radio(
     label='Thầy/cô chọn chế độ sử dụng API', 
-    options=['API mặc định', 'API cá nhân'],
-    index=1
+    options=['OPENAI API mặc định', 'OPENAI API cá nhân'],
+    index=0
     )
 
-if option_api == 'API cá nhân':
+if option_api == 'OPENAI API cá nhân':
     api_key = st.sidebar.text_input(
-        "Nhập API KEY của AI của thầy/cô",
+        "Nhập OPENAI API KEY của AI của thầy/cô",
         type="password"
         )
     max_token_out = None
