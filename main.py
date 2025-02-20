@@ -57,20 +57,20 @@ with st.expander("Click để xem đề mẫu - Đơn giản"):
     )
 
 with st.expander("Click để xem đề mẫu - Trung bình"):
-    st.text("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
-thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
-Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
-A. _1 / 2 * g * (t ** 2)_ 
-B. _1 / 2 * g * t_ 
-C. _g * (t ** 2)_ 
-D. _2 * g * (t ** 2)_ 
-Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
-Đáp án: _1 / 2 * g * (t ** 2)_"""
+    st.code("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
+            thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
+            Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
+                A. _1 / 2 * g * (t ** 2)_ 
+                B. _1 / 2 * g * t_ 
+                C. _g * (t ** 2)_ 
+                D. _2 * g * (t ** 2)_                 
+            Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
+            Đáp án: _1 / 2 * g * (t ** 2)_"""
     )
 
         
 with st.expander("Click để xem đề mẫu - Phức tạp"):
-    st.text("""
+    st.code("""
         Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
         vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m. Khi đó, khu vườn 
         mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai để chắn xung 
