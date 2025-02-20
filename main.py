@@ -49,7 +49,8 @@ Trước khi tạo đề tương tự, thầy/cô lưu ý:
             """)
 
 with st.expander("Click để xem đề mẫu - Đơn giản"):
-    st.code("""Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:   
+    st.code("""
+Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:   
     A. _a+b_ cuốn sách
     B. _a*b_cuốn sách
     C. _a_ cuốn sách
@@ -57,29 +58,30 @@ with st.expander("Click để xem đề mẫu - Đơn giản"):
     )
 
 with st.expander("Click để xem đề mẫu - Trung bình"):
-    st.code("""Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
-            thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
-            Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
-                A. _1 / 2 * g * (t ** 2)_ 
-                B. _1 / 2 * g * t_ 
-                C. _g * (t ** 2)_ 
-                D. _2 * g * (t ** 2)_                 
-            Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
-            Đáp án: _1 / 2 * g * (t ** 2)_"""
+    st.code("""
+Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
+thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
+Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
+    A. _1 / 2 * g * (t ** 2)_ 
+    B. _1 / 2 * g * t_ 
+    C. _g * (t ** 2)_ 
+    D. _2 * g * (t ** 2)_                 
+Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
+Đáp án: _1 / 2 * g * (t ** 2)_"""
     )
 
         
 with st.expander("Click để xem đề mẫu - Phức tạp"):
     st.code("""
-        Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
-        vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m. Khi đó, khu vườn 
-        mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai để chắn xung 
-        quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 3 m dây thép gai. 
-        Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
+Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
+vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m. Khi đó, khu vườn 
+mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai để chắn xung 
+quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 3 m dây thép gai. 
+Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
     
-        Đáp án:
-        Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
-        Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
+Đáp án:
+Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
+Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k)))*2*3_
     """
     )
     
