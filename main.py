@@ -93,6 +93,7 @@ thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s
     D. _2 * g * (t ** 2)_    
              
 Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
+
 Đáp án: _1 / 2 * g * (t ** 2)_"""
     )
 
@@ -205,7 +206,7 @@ if input_text:
     
     
     guide_message = "Tạo đề bài mới từ đề bài sau đây, sử dụng đa dạng phong phú \
-        các loại bối cảnh nhưng chỉ sử dụng số liệu trong bài tập. \
+        các loại bối cảnh nhưng giữ nguyên số liệu trong bài tập. \
         Ngoài đề bài và đáp án, bổ sung thêm gợi ý cách làm cho từng câu hỏi nếu học sinh \
         làm sai. Giữ nguyên dạng câu hỏi."
         
