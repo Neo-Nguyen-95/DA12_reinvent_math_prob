@@ -63,18 +63,20 @@ Trước khi tạo đề tương tự, thầy/cô lưu ý:
 
 with st.expander("Click để xem đề mẫu - Đơn giản"):
     st.code("""
-Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. 
-Vậy, tổng 2 bạn có:   
+Nhà bạn An nuôi _a_ con gà. Nhà bạn Bình nuôi _b_ con gà. Hai bạn rủ nhau góp 
+gà cùng nuôi. Sau 2 tuần, có thêm 1 con gà con.
+
+Hai bạn đang có bao nhiêu con gà?   
     
-    A. _a+b_ cuốn sách
+    A. _a+b+1_ con gà
     
-    B. _a*b_cuốn sách
+    B. _a*b+1_ con gà
     
-    C. _a_ cuốn sách
+    C. _a+b-1_ con gà
     
-    D. _b_ cuốn sách
+    D. _a*b-1_ con gà
     
-Đáp án: _a+b_
+Đáp án: _a+b+1_ con gà
     """
     )
 
@@ -103,7 +105,7 @@ khu vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m
 khu vườn mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai 
 để chắn xung quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 
 3 m dây thép gai. 
-Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
+Vậy sau khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
     
 Đáp án:
 Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+2*a)*2*3_
