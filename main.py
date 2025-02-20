@@ -65,10 +65,15 @@ with st.expander("Click để xem đề mẫu - Đơn giản"):
     st.code("""
 Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. 
 Vậy, tổng 2 bạn có:   
+    
     A. _a+b_ cuốn sách
+    
     B. _a*b_cuốn sách
+    
     C. _a_ cuốn sách
+    
     D. _b_ cuốn sách
+    
 Đáp án: _a+b_
     """
     )
@@ -78,10 +83,15 @@ with st.expander("Click để xem đề mẫu - Trung bình"):
 Một người thả rơi một hòn bi từ trên cao xuống đất và đo được 
 thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s^2$. 
 Độ cao của nơi thả hòn bi so với mặt đất và vận tốc lúc chạm đất là: 
+    
     A. _1 / 2 * g * (t ** 2)_ 
+    
     B. _1 / 2 * g * t_ 
+    
     C. _g * (t ** 2)_ 
-    D. _2 * g * (t ** 2)_                 
+    
+    D. _2 * g * (t ** 2)_    
+             
 Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
 Đáp án: _1 / 2 * g * (t ** 2)_"""
     )
