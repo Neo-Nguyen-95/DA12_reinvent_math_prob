@@ -6,6 +6,24 @@ from openai import OpenAI
 import time
  
 #%% INTRO
+# set page config
+st.set_page_config(
+    page_title = 'Math Generator',
+    page_icon = '🧮'
+    )
+
+custom_css = """
+<style>
+    body {
+        background-color: #F0F2F6;
+        color: #262730;
+    }
+</style>
+"""
+
+# Apply the CSS
+st.markdown(custom_css, unsafe_allow_html=True)
+
 st.title("MATH PROBLEM GENERATOR (POWERED BY AI BUDDY)")
 
 #%% INPUT
