@@ -55,7 +55,9 @@ Vậy, tổng 2 bạn có:
     A. _a+b_ cuốn sách
     B. _a*b_cuốn sách
     C. _a_ cuốn sách
-    D. _b_ cuốn sách"""
+    D. _b_ cuốn sách
+Đáp án: _a+b_
+    """
     )
 
 with st.expander("Click để xem đề mẫu - Trung bình"):
