@@ -237,8 +237,7 @@ if input_text:
             model='gpt-4o-mini',
             messages = [
                     {"role": "system", 
-                     "content": "Bạn là giáo viên dạy toán ở Việt Nam, kiến thức của bạn \
-                    là từ chương trình giáo dục phổ thông tại Việt Nam, sử dụng ngôn từ \
+                     "content": "Bạn là giáo viên dạy toán ở Việt Nam, sử dụng ngôn từ \
                     thân thiện, khoa học và phù hợp văn hoá Việt Nam. Công thức \
                     Toán học cần để ở giữa $ $. " + type_message + guide_message
                      },
