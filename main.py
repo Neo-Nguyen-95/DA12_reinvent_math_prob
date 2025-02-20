@@ -191,7 +191,7 @@ if input_text:
     
     if st.button("Tạo đề mới từ bộ tham số đã nhập"):
         
-        if option_api == "API mặc định":
+        if option_api == "OPENAI API mặc định":
             col1, col2, col3, col4, col5, col6 = st.columns(6)
             col1.write("Loading")
             time.sleep(wait_time/5)
@@ -232,7 +232,7 @@ if input_text:
         with tab2:
             st.code(response.choices[0].message.content)
             
-        if option_api == "API mặc định":
+        if option_api == "OPENAI API mặc định":
             st.markdown("""
                         **Thầy/cô đã đạt giới hạn 400 từ cho câu trả lời!**
                         """)
