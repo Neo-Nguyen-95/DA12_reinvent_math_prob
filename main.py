@@ -12,17 +12,6 @@ st.set_page_config(
     page_icon = '🧮'
     )
 
-custom_css = """
-<style>
-    body {
-        background-color: #F0F2F6;
-        color: #262730;
-    }
-</style>
-"""
-
-# Apply the CSS
-st.markdown(custom_css, unsafe_allow_html=True)
 
 st.title("MATH PROBLEM GENERATOR (POWERED BY AI BUDDY)")
 
@@ -62,9 +51,21 @@ Idea by Ms. Trâm & Ms. Quỳnh Anh
 Developed by Neo
 """)
 
+st.markdown("""
+            ## GIỚI THIỆU
+            """) 
 
 st.markdown("""
 Xin chào thầy/cô đến với ứng dụng sinh câu hỏi toán tương tự bằng AI.
+Dưới đây là nguyên lí hoạt động của hệ thống. Đảm bảo khắc phục được yếu điểm 
+trong suy luận toán học của AI khi tạo đề mới.
+""")
+
+
+st.image("Principle.png", use_column_width=True)
+
+
+st.markdown("""
 
 Trước khi tạo đề tương tự, thầy/cô lưu ý:
                 
@@ -130,6 +131,8 @@ Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(
 Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+2*)*2*3_
     """
     )
+        
+st.markdown("""---""") 
     
 st.markdown("""
             ## Bước 1: Nhập đề nguyên lí
@@ -229,6 +232,7 @@ if input_text:
         làm sai. Giữ nguyên dạng câu hỏi."
         
     # %% USE AI TO GENERATE NEW CONTEXT FOR EACH PROBLEM
+    st.markdown("""---""") 
     st.markdown("""
                 ## Bước 2: Tạo bài tập tương tự
                 """)
