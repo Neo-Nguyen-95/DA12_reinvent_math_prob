@@ -38,6 +38,12 @@ Thầy/cô có thể trả phí và sử dụng OPENAI API tại
 [trang chủ của OPENAI](https://platform.openai.com/).
 """)
 
+st.sidebar.markdown("""
+---
+Idea by Ms. Trâm & Ms. Quỳnh Anh
+Developed by Neo
+""")
+
 
 st.markdown("""
 Xin chào thầy/cô đến với ứng dụng sinh câu hỏi toán tương tự bằng AI.
