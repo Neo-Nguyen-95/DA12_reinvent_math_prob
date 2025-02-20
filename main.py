@@ -205,9 +205,9 @@ if input_text:
     
     
     guide_message = "Tạo đề bài mới từ đề bài sau đây, sử dụng đa dạng phong phú \
-        các loại bối cảnh nhưng phải giữ nguyên số liệu trong bài tập. \
+        các loại bối cảnh nhưng chỉ sử dụng số liệu trong bài tập. \
         Ngoài đề bài và đáp án, bổ sung thêm gợi ý cách làm cho từng câu hỏi nếu học sinh \
-        làm sai. Giữ nguyên dạng câu hỏi. Chỉ sử dụng số liệu được cung cấp."
+        làm sai. Giữ nguyên dạng câu hỏi."
         
     # %% USE AI TO GENERATE NEW CONTEXT FOR EACH PROBLEM
     st.markdown("""
