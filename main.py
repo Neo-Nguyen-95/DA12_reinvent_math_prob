@@ -49,14 +49,10 @@ Trước khi tạo đề tương tự, thầy/cô lưu ý:
             """)
 
 with st.expander("Click để xem đề mẫu - Đơn giản"):
-    st.text("""Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:
-            
+    st.code("""Bạn An có _a_ quyển sách. Bạn Bình có _b_ quyển sách. Vậy, tổng 2 bạn có:   
     A. _a+b_ cuốn sách
-    
     B. _a*b_cuốn sách
-    
     C. _a_ cuốn sách
-    
     D. _b_ cuốn sách"""
     )
 
