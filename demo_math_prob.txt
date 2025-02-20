@@ -20,8 +20,8 @@ Gợi ý công thức: $h = \frac{1}{2} a t^2$
 
 Test Hard: Test value = 1.5 - 3 - 18
 Khu vườn nhà bác An có chiều dài gấp _k_ lần chiều rộng. Bác muốn mở rộng khu 
-vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ cm. Khi đó, khu vườn 
-mới của bác có diện tích bằng _b_ cm^2. Bác sử dụng dây thép gai để chắn xung 
+vườn bằng cách cùng tăng chiều dài và chiều rộng thêm _a_ m. Khi đó, khu vườn 
+mới của bác có diện tích bằng _b_ m^2. Bác sử dụng dây thép gai để chắn xung 
 quanh khu vườn của mình, cứ 1 m đường biên vườn cần sử dụng 3 m dây thép gai. 
 Vậy khi mở rộng diện tích khu vườn, số m dây thép gai bác cần dùng là … m.
 
