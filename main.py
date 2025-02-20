@@ -31,6 +31,13 @@ else:
     st.sidebar.write(f"Số lượng từ tối đa cho câu trả lời: {max_token_out}")
     wait_time = 5
     st.sidebar.write(f"Thời gian chờ kết quả là {wait_time}s")
+    
+st.sidebar.makrdown("""
+---
+Thầy/cô có thể trả phí và sử dụng OPENAI API tại 
+[trang chủ của OPENAI](https://platform.openai.com/).
+                    """)
+
 
 st.markdown("""
 Xin chào thầy/cô đến với ứng dụng sinh câu hỏi toán tương tự bằng AI.
