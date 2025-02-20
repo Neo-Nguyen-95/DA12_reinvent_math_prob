@@ -36,7 +36,7 @@ st.sidebar.makrdown("""
 ---
 Thầy/cô có thể trả phí và sử dụng OPENAI API tại 
 [trang chủ của OPENAI](https://platform.openai.com/).
-                    """)
+""")
 
 
 st.markdown("""
