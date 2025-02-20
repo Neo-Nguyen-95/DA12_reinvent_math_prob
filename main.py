@@ -92,8 +92,6 @@ thời gian rơi là _t_ s. Bỏ qua sức cản không khí. Lấy g = _g_ $m/s
     
     D. _2 * g * (t ** 2)_    
              
-Gợi ý công thức: $h = \\frac{1}{2} a t^2$ 
-
 Đáp án: _1 / 2 * g * (t ** 2)_"""
     )
 
