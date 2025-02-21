@@ -77,7 +77,7 @@ st.markdown("""
             ## HƯỚNG DẪN SỬ DỤNG
             """) 
             
-st.video('https://youtu.be/2vuvJ8Jjd8I')
+st.video('https://youtu.be/9MUe0Fi8nao')
 
 st.markdown("""
 Trước tiên, thầy cô cần chuẩn bị đề nguyên lí, bao gồm các biến và nguyên lí tính 
