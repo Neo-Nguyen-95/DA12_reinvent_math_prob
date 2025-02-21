@@ -76,6 +76,8 @@ chỉ hỗ trợ thầy cô tạo ra các bối cảnh mới với số liệu s
 st.markdown("""
             ## HƯỚNG DẪN SỬ DỤNG
             """) 
+            
+st.video('https://youtu.be/2vuvJ8Jjd8I')
 
 st.markdown("""
 Trước tiên, thầy cô cần chuẩn bị đề nguyên lí, bao gồm các biến và nguyên lí tính 
