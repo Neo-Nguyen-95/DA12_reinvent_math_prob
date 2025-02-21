@@ -8,14 +8,14 @@ import time
 #%% INTRO
 # set page config
 st.set_page_config(
-    page_title = 'Math Generator',
+    page_title = 'Problem Generator',
     page_icon = '🧮'
     )
 
 
-st.title("MATH PROBLEM GENERATOR (POWERED BY AI BUDDY)")
+st.title("SIMILAR PROBLEM GENERATOR (POWERED BY AI 🤖)")
 
-#%% INPUT
+#%% SIDE BAR INFOR - INPUT
 option_api = st.sidebar.radio(
     label='Thầy/cô chọn chế độ sử dụng API', 
     options=['OPENAI API mặc định', 'OPENAI API cá nhân'],
@@ -45,12 +45,15 @@ Thầy/cô có thể trả phí và sử dụng OPENAI API tại
 [trang chủ của OPENAI](https://platform.openai.com/).
 """)
 
+# Credit
 st.sidebar.markdown("""
 ---
-Idea by Ms. Trâm & Ms. Quỳnh Anh
-Developed by Neo
+**Credit**
+- Idea by Ms. Trâm & Ms. Quỳnh Anh
+- Developed by Neo
 """)
 
+#%% INTRODUCTION
 st.markdown("""
             ## GIỚI THIỆU
             """) 
@@ -62,21 +65,24 @@ trong suy luận toán học của AI khi tạo đề mới.
 """)
 
 
-st.image("Principle.png", use_column_width=True)
-
+st.image("Principle.png")
 
 st.markdown("""
+Về cơ bản, thầy cô vẫn cần đảo bảo các con số trong bài là hợp lí và chính xác, AI 
+chỉ hỗ trợ thầy cô tạo ra các bối cảnh mới với số liệu sẵn có.
+            """)
 
-Trước khi tạo đề tương tự, thầy/cô lưu ý:
-                
-- Thầy/cô cần nhập nguyên lí hình thành số và đáp án vào phần mềm
-                
-- Phần mềm sẽ tạo ra các đề với bối cảnh mới, nhưng số sẽ tuân theo quy luật mà \
-                    thầy/cô đã thiết lập.
-                    
-- Các biến và công thức tính toán trong bài cần để ở giữa dấu gạch dưới '_'. \
-    *Ví dụ: Bạn A có \\_x\\_ quả cam, Bạn B có \\_y\\_ quả cam.*.
+#%% USER GUIDE
+st.markdown("""
+            ## HƯỚNG DẪN SỬ DỤNG
+            """) 
 
+st.markdown("""
+Trước tiên, thầy cô cần chuẩn bị đề nguyên lí, bao gồm các biến và nguyên lí tính 
+toán của đáp án. 
+- Các biến và công thức tính toán trong bài cần để ở giữa dấu gạch dưới '_'. 
+- *Ví dụ: Bạn A có \\_x\\_ quả cam, Bạn B có \\_y\\_ quả cam.*, hai bạn có tổng 
+\\_x+y\\_ quả cam => hệ thống tự động sẽ nhận diện x, y, và tính ra x+y
 - Số mũ cấp số nhân không sử dụng ^ mà sử dụng kí hiệu \\*\\*. *Ví dụ: a mũ x sẽ viết là a \\*\\* x*
             """)
 
@@ -131,6 +137,11 @@ Số m dây thép gai cần dùng là: _(((-(a+a*k) + np.sqrt((a+a*k)**2 - 4*k*(
 Số m dây thép gai cần dùng là: _(((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+k*((-(a+a*k) - np.sqrt((a+a*k)**2 - 4*k*(a**2-b))) / (2*k))+2*)*2*3_
     """
     )
+        
+st.markdown("""
+Sau khi đã chuẩn bị đề nguyên lí, thầy cô chỉ việc nhập vào app vào làm theo các 
+bước mà phần mềm yêu cầu để tạo các đề tương tự.
+            """)
         
 st.markdown("""---""") 
     
